@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css">
+        <link rel="stylesheet" href="css/style.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+        <header><a class="btn"> Live Coding </a></header>
+        
+		<div class="reveal">
+			<div class="slides">
+                <section class = "center">
+                    <h1 style="font-size: 64px;">ECMAScript e JavaScript</h1>
+                    <p style="font-size: 32px;">Fernando José de Almeida</p>
+                </section>
+				<section>
+                    <h1 style="font-size: 64px; margin-bottom: 40px;">1 O que é EMAC?</h1>
+                    <ul>
+                        <li class="fragment" style="margin-bottom: 24px;">European Computer Manufacturers Association</li>
+                        <li class="fragment" style="margin-bottom: 24px;">Associação dedicada à padronização de sistemas de informação</li>
+                        <li class="fragment" style="margin-bottom: 24px;">O JavaScript foi criado para o navegador Netscape (Brendan Eich - 1995)</li>
+                    </ul>
+                    <img class="fragment" src="./images/bredanEich.jpg" style="height: 162px;">             
+                </section>
+                <section>
+                    <h1 style="font-size: 56px; margin-bottom: 40px;">2 Criação do ECMAScript</h1>
+                    <ul>
+                        <li class="fragment" style="margin-bottom: 24px;">Necessidade de uma linguagem padrão para navegadores</li>
+                        <li class="fragment" style="margin-bottom: 24px;">“General-purpose programming language”</li>
+                        <li class="fragment" style="margin-bottom: 24px;">ECMAScript é uma padronização do JavaScript</li>
+                        <li class="fragment" style="margin-bottom: 24px;">ECMA + JavaScript = ECMAScript</li>
+                    </ul>
+                </section>
+				<section>
+                    <section data-transition-speed="slow">
+                        <h1 style="font-size: 64px;">3 Novidades da ES6</h1>
+                        <h2 class="fragment" style="font-size: 48px;">3.1 Default parameter</h2>
+                        <ul style="width: 750px;">
+                            <li class="fragment" style="margin-bottom: 24px;">Parâmetros de funções têm <span style="font-style: italic;">undefined</span> como valor <span style="font-style: italic;">default</span></li>
+                            <li class="fragment" style="margin-bottom: 24px;">
+                                <p>Antes da ES6:</p>
+                                <pre><code class="hljs js" data-trim contenteditable data-noescape>
+                                    function exibeValor(x, y){
+                                        x = x | 0;
+                                        y = y | 0;
+                                        console.log("1º valor: " + x);
+                                        console.log("2º valor: " + y);
+                                    }
+                                    exibeValor();
+                                </code></pre>
+                            </li>
+                        </ul>
+                    </section>
+                    <section data-transition-speed="slow">
+                        <h1 style="font-size: 64px;">Novidades da ES6</h1>
+                        <h2 style="font-size: 48px;">3.1 Default parameter</h2>
+                        <ul style="width: 750px;">
+                            <li class="fragment" style="margin-bottom: 24px;">
+                                <p>Depois da ES6:</p>
+                                <pre><code class="hljs js" data-trim contenteditable>
+                                    function exibeValor(x = 0, y = 0){
+                                        console.log("1º valor: " + x);
+                                        console.log("2º valor: " + y);
+                                    }
+                                    exibeValor(1,2);
+                                </code></pre>
+                            </li>
+                        </ul>
+                    </section>
+                    <section data-transition-speed="slow">
+                        <h1 style="font-size: 64px;">Novidades da ES6</h1>
+                        <h2 class="fragment" style="font-size: 48px;">3.2 Template strings</h2>
+                        <ul style="width: 750px;">
+                            <li class="fragment" style="margin-bottom: 24px;">
+                                <p>Antes da ES6:</p>
+                                <pre><code class="hljs js" data-trim contenteditable>
+                                    function soma2(x = 0, y = 0){
+                                        console.log("A soma de " + x + " e " + y + " é igual a " + (x+y));
+                                    }
+                                    soma2(1,2);
+                                </code></pre>
+                            </li>
+                            <li class="fragment" style="margin-bottom: 24px;">
+                                <p>Depois da ES6:</p>
+                                <pre><code class="hljs js" data-trim contenteditable>
+                                    function soma2(x = 0, y = 0){
+                                        console.log(`A soma de ${x} e ${y} é igual a ${x+y}`);
+                                    }
+                                    soma2(1,2);
+                                </code></pre>
+                            </li>
+                        </ul>
+                    </section>
+                    <section data-transition-speed="slow">
+                        <h1 style="font-size: 64px;">Novidades da ES6</h1>
+                        <h2 class="fragment" style="font-size: 48px;">3.3 Destructuring</h2>
+                        <ul style="width: 750px;">
+                            <li class="fragment" style="margin-bottom: 24px;">Permite extrair dados de arrays ou objetos em variáveis distintas</li>
+                            <li class="fragment" style="margin-bottom: 24px;">
+                                <p>Exemplos (Arrays):</p>
+                                <pre><code class="hljs js" data-trim contenteditable>
+                                    const lista = [1,2,3,4,5];
+                                    const [a,b] = lista;
+                                    console.log(a);   // 1
+                                    console.log(b);   // 2
+                                </code></pre>
+                            </li>
+                        </ul>
+                    </section>
+                    <section data-transition-speed="slow">
+                        <h1 style="font-size: 64px;">Novidades da ES6</h1>
+                        <h2 style="font-size: 48px;">3.3 Destructuring</h2>
+                        <ul style="width: 750px;">
+                            <li class="fragment" style="margin-bottom: 24px;">
+                                <p>Exemplos (Objetos):</p>
+                                <pre><code class="hljs js" data-trim contenteditable>              
+                                    const carro = {
+                                        cor: 'black',
+                                        placa: 'ABC1234',
+                                        marca: 'Toyota',
+                                        modelo: 'Conversível',
+                                        preco: 50000
+                                    };
+                                    const {cor, placa} = carro;
+                                    console.log(cor);      // 'black'
+                                    console.log(placa);   // 'ABC1234'
+                                </code></pre>
+                            </li>
+                        </ul>
+                    </section>
+                    
+                </section>
+                <section>
+                    <section data-transition-speed="slow">
+                        <h1 class="fragment" style="font-size: 64px;">4 <span style="font-style: italic;">Strict mode</span></h1>
+                        <ul style="width: 750px;">
+                            <li class="fragment" style="margin-bottom: 24px;">Pode ser invocado utilizando <span style="font-style: italic;">"use strict"</span></li>
+                            <li class="fragment" style="margin-bottom: 24px;">Foi introduzido na ES5</li>
+                            <li class="fragment" style="margin-bottom: 24px;">Garante a criação de códigos mais seguros</li>
+                            <li class="fragment" style="margin-bottom: 24px;">Lança erros em situações que o JavaScript não o faz</li>
+                            <li class="fragment" style="margin-bottom: 24px;">Previne alguns erros de sintaxe</li>
+                        </ul>
+                    </section>
+                    <section data-transition-speed="slow">
+                        <h1 style="font-size: 64px;">4 <span style="font-style: italic;">Strict mode</span></h1>
+                        <ul style="width: 750px;">
+                            <li class="fragment" style="margin-bottom: 24px;">
+                                <p>Exemplos:</p>
+                                <pre><code class="hljs js" data-trim contenteditable data-noescape>
+                                    "use strict"
+                                    //Atribuição a variável não declarada
+                                    teste = 'olá';
+                                    //Duplicação de parâmetros
+                                    function exibeValor(x, x){
+                                        console.log("1º valor: " + x);
+                                        console.log("2º valor: " + y);
+                                    }
+                                    exibeValor(1,2);
+                                </code></pre>
+                            </li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <section data-transition-speed="slow">
+                        <h1 style="font-size: 64px;">5 <span style="font-style: italic;">Hoisting</span></h1>
+                        <ul style="width: 750px;">
+                            <li class="fragment" style="margin-bottom: 24px;">No JavaScript as declarações são movidas para o topo</li>
+                            <li class="fragment" style="margin-bottom: 24px;">É uma boa prática declarar variáveis no topo</li>
+                            <li class="fragment" style="margin-bottom: 24px;">Só funciona com declarações <span style="font-style: italic;">var</span></li>                  
+                        </ul>
+                    </section>
+                    <section data-transition-speed="slow">
+                        <h1 style="font-size: 64px;">5 <span style="font-style: italic;">Hoisting</span></h1>
+                        <ul style="width: 750px;">
+                            <li class="fragment" style="margin-bottom: 24px;">
+                                <p>Exemplos:</p>
+                                <pre><code class="hljs js" data-trim contenteditable data-noescape>
+                                    vDefault = 'nada';
+                                    function exibeValor(x = vDefault, y = vDefault){
+                                        console.log("1º valor: " + x);
+                                        console.log("2º valor: " + y);
+                                    }
+                                    exibeValor();
+                                    var vDefault;
+                                </code></pre>
+                            </li>
+                        </ul>
+                    </section>
+                </section>  
+                <section data-transition-speed="slow">
+                    <h1 style="font-size: 64px;">6 <span style="font-style: italic;">var, let</span> e <span style="font-style: italic;">const</span></h1>
+                    <ul style="width: 750px;">
+                        <li class="fragment" style="margin-bottom: 24px;">
+                            <p><span style="font-style: italic;">var</span> tem escopo de função e <span style="font-style: italic;">let/const</span> tem escopo de bloco:</p>
+                            <pre class="fragment"><code class="hljs js" data-trim contenteditable data-noescape>
+                                function somaX(a, condicao = true) {
+                                    if (condicao) {
+                                        var x = 2;
+                                    }
+                                    return a + x;
+                                }
+                                console.log(somaX(2));
+                            </code></pre>
+                        </li>                  
+                    </ul>
+                </section>
+                <section>
+                    <section data-transition-speed="slow">
+                        <h1 class="fragment" style="font-size: 64px;">7 <span style="font-style: italic;">for, forEach</span> e <span style="font-style: italic;">for... of</span></h1>
+                        <ul style="width: 750px;">
+                            <li class="fragment" style="margin-bottom: 24px;">
+                                <p>O comando <span style="font-style: italic;">for</span> fornece acesso ao índice do array, diferente dos outros:</p>
+                                <p>Exemplo com <span style="font-style: italic;">for</span>:</p>
+                                <pre class="fragment"><code class="hljs js" data-trim contenteditable data-noescape>
+                                    function maior(lista) {
+                                        let maiorValor;
+                                        if(lista === undefined || lista.length == 0)
+                                            return null;
+                                        maiorValor = lista[0];
+                                        for(let i = 1; i < lista.length; i++){
+                                            if(maiorValor < lista[i])
+                                                maiorValor = lista[i];
+                                        }
+                                        return maiorValor;
+                                    }
+                                    console.log(maior([1,20,35,-100,47,32]));
+                                </code></pre>
+                            </li>                  
+                        </ul>
+                    </section>
+                    <section data-transition-speed="slow">
+                        <h1 style="font-size: 64px;">7 <span style="font-style: italic;">for, forEach</span> e <span style="font-style: italic;">for... of</span></h1>
+                        <ul style="width: 750px;">
+                            <li class="fragment" style="margin-bottom: 24px;">
+                                <p>Exemplo com <span style="font-style: italic;">forEach</span>:</p>
+                                <pre class="fragment"><code class="hljs js" data-trim contenteditable data-noescape>
+                                    function maior(lista) {
+                                        let maiorValor;
+                                        if(lista === undefined || lista.length == 0)
+                                            return null;
+                                        maiorValor = lista[0];
+                                        lista.forEach(elemento => {
+                                            if(maiorValor < elemento)
+                                                maiorValor = elemento;
+                                        });
+                                        return maiorValor;
+                                    }
+                                    console.log(maior([1,20,35,-100,47,32]));
+                                </code></pre>
+                            </li>
+                        </ul>
+                    </section>
+                    <section data-transition-speed="slow">
+                        <h1 style="font-size: 64px;">7 <span style="font-style: italic;">for, forEach</span> e <span style="font-style: italic;">for... of</span></h1>
+                        <ul style="width: 750px;">
+                            <li class="fragment" style="margin-bottom: 24px;">
+                                <p>Exemplo com <span style="font-style: italic;">for...of</span>:</p>
+                                <pre class="fragment"><code class="hljs js" data-trim contenteditable data-noescape>
+                                    function maior(lista) {
+                                        let maiorValor;
+                                        if(lista === undefined || lista.length == 0)
+                                            return null;
+                                        maiorValor = lista[0];
+                                        for(let elemento of lista){
+                                            if(maiorValor < elemento)
+                                                maiorValor = elemento;
+                                        }
+                                        return maiorValor;
+                                    }
+                                    console.log(maior([1,20,35,-100,47,32]));
+                                </code></pre>
+                            </li>
+                        </ul>
+                    </section>
+                </section>               
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script> 
+        <script src="src-noconflict/ace.js"></script>
+        <script src="js/revealeditor.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+                controlsTutorial: false,
+                center: false,
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+
+            $(".btn").RevealEditor();
+		</script>
+	</body>
+</html>
